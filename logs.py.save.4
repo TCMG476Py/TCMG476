@@ -17,15 +17,4 @@ if answer == 1:
 	print('Total request made:',lines)
 
 if answer == 3:
-	fail = 0
-	for line in html.splitlines():
-		if (line.split('" ')[-1][0]) == '4':
-			fail += 1
-	print float(fail) / 726736 * 100, '%'
-
-if answer == 4:
-	redir = 0
-        for line in html.splitlines():
-                if (line.split('" ')[-1][0]) == '3':
-                        redir += 1
-        print float(redir) / 726736 * 100, '%'
+	sta4xx = len(html.split('.*\"(.*) .*'))

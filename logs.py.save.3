@@ -10,22 +10,11 @@ print('(4)What percentage of the requests were redirected elsewhere (any 3xx cod
 print('(5)What was the most-requested file?')
 print('(6)What was the least-requested file?')
 print('(7) quit')
-answer = int(input('Choose a question to answer:'))
+answer = int(input('Choose a question to answer: '))
 
 if answer == 1:
 	lines = len(html.splitlines())
 	print('Total request made:',lines)
 
-if answer == 3:
-	fail = 0
-	for line in html.splitlines():
-		if (line.split('" ')[-1][0]) == '4':
-			fail += 1
-	print float(fail) / 726736 * 100, '%'
+if answer == 2:
 
-if answer == 4:
-	redir = 0
-        for line in html.splitlines():
-                if (line.split('" ')[-1][0]) == '3':
-                        redir += 1
-        print float(redir) / 726736 * 100, '%'
